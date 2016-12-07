@@ -17,7 +17,7 @@ HOST1='80.80.80.80'
 HOST2='8.8.8.8'
 
 # Your internet service providers name
-ISP='Digi'
+ISP='telekom'
 
 # Checking HOST1 if it's reachable
 pingtime=$(ping -w 1 $HOST1 | grep ttl)
@@ -25,7 +25,7 @@ if [ "$pingtime" = "" ]
 then
 	echo [$(date +"%Y.%m.%d. %H:%M:%S")] "$HOST1 is unreachable. Trying next server.">> $LOGERROR
 
-	# Checkint HOST2 if it's reachable
+	# Checking HOST2 if it's reachable
 	pingtimetwo=$(ping -w 1 $HOST2 | grep ttl) 
 	if [ "$pingtimetwo" = "" ] 
 	then
