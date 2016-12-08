@@ -36,6 +36,7 @@ then
 		poff;pon dsl-provider
 	else
 		echo [$(date +"%Y.%m.%d. %H:%M:%S")] "$HOST2 is reachable. PPP connection is up.">> $LOGCHECK	
+		echo [$(date +"%Y.%m.%d. %H:%M:%S")] "$HOST2 is reachable. PPP connection is up.">> $LOGERROR	
 	fi 
 else
 	echo [$(date +"%Y.%m.%d. %H:%M:%S")] "$HOST1 is reachable. PPP connection is up.">> $LOGCHECK
