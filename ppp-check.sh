@@ -16,9 +16,6 @@ LOGERROR='/var/log/ppp/ppp-error.log'
 HOST1='80.80.80.80'
 HOST2='8.8.8.8'
 
-# Your internet service providers name
-ISP='telekom'
-
 # Checking HOST1 if it's reachable
 pingtime=$(ping -w 1 $HOST1 | grep ttl)
 if [ "$pingtime" = "" ] 
@@ -30,7 +27,7 @@ then
 	if [ "$pingtimetwo" = "" ] 
 	then
 		echo [$(date +"%Y.%m.%d. %H:%M:%S")] "$HOST2 is unreachable. PPP connection is down.">> $LOGERROR	
-		echo [$(date +"%Y.%m.%d. %H:%M:%S")] "$ISP PPPoE restating.">> $LOGERROR
+		echo [$(date +"%Y.%m.%d. %H:%M:%S")] "PPPoE restating.">> $LOGERROR
 		
 		# Restarting PPPoE connection
 		poff;pon dsl-provider
